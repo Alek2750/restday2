@@ -26,13 +26,14 @@ public class Address implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
+
     private String street;
     private int no;
     private String zip;
-    
-    @OneToMany(mappedBy="address")
+
+    @OneToMany(mappedBy = "address")
     private List<Customer> customers = new ArrayList();
+
     public Address() {
     }
 
@@ -73,26 +74,7 @@ public class Address implements Serializable {
     public void setZip(String zip) {
         this.zip = zip;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     public int getId() {
         return id;
     }
@@ -102,28 +84,8 @@ public class Address implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (int) id;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Address)) {
-            return false;
-        }
-        Address other = (Address) object;
-        if (this.id != other.id) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
     public String toString() {
-        return "dk.webtrade.todelete.entity.Address[ id=" + id + " ]";
+        return "Address{" + "id=" + id + ", street=" + street + ", no=" + no + ", zip=" + zip + ", customers=" + customers + '}';
     }
-    
+
 }

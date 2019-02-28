@@ -71,38 +71,17 @@ public class Customer implements Serializable {
     public void setAddress(Address address) {
         boolean addThis = true;
         for (Customer customer : address.getCustomers()) {
-            if(customer==this) addThis = false; break;
+            if (customer == this) {
+                addThis = false;
+            }
+            break;
         }
-        if(addThis) 
+        if (addThis) {
             address.addCustomers(this);
+        }
         this.address = address;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     public int getId() {
         return id;
     }
@@ -111,29 +90,4 @@ public class Customer implements Serializable {
         this.id = id;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (int) id;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Customer)) {
-            return false;
-        }
-        Customer other = (Customer) object;
-        if (this.id != other.id) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "dk.webtrade.todelete.entity.Customer[ id=" + id + " ]";
-    }
-    
 }

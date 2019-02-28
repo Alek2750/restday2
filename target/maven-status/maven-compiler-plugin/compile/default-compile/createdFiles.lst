@@ -1,4 +1,5 @@
 dk\webtrade\todelete\entity\Customer.class
+DTO\CustomerDTO.class
 dk\webtrade\todelete\entity\Customer_.class
 dk\webtrade\todelete\entity\Address_.class
 dk\webtrade\todelete\data\DataFacade.class
